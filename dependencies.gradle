@@ -1,0 +1,11 @@
+ext {
+    rxVersion = '2.0.6'
+    rx = [
+        java : "io.reactivex.rxjava2:rxjava:$rxVersion"
+    ]
+
+    systemHookVersion = '2.5'
+    system = [
+        hooks : "lc.kra.system:system-hook:$systemHookVersion"
+    ]
+}

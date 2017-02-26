@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextField?>
+<?import java.net.URL?>
+
+<BorderPane
+    fx:controller="com.timer_san.timer.controller.TimerSceneController"
+    xmlns:fx="http://javafx.com/fxml">
+
+    <prefHeight>
+        <com.timer_san.constants.ResourceValue fx:constant="PANE_PREFERRED_HEIGHT" />
+    </prefHeight>
+
+    <prefWidth>
+        <com.timer_san.constants.ResourceValue fx:constant="PANE_PREFERRED_WIDTH" />
+    </prefWidth>
+
+    <center>
+        <TextField
+            fx:id="countDownText"
+            alignment="CENTER"
+            editable="false"
+            focusTraversable="false"
+            styleClass="scene_timer_countdown_text_field" />
+    </center>
+
+    <stylesheets>
+        <URL value="@scene_timer.css" />
+    </stylesheets>
+
+</BorderPane>
