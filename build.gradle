@@ -33,10 +33,15 @@ allprojects {
         }
     }
 
-    jar {
+    task fatJar(type: Jar) {
         manifest {
-            attributes 'Main-Class': 'com.timer_san.EntryPoint'
+            attributes 'Implementation-Title': 'timer-san',
+                    'Implementation-Version': version,
+                    'Main-Class': 'com.timer_san.EntryPoint'
         }
+        baseName = project.name + '-all'
+        from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+        with jar
     }
 
 }

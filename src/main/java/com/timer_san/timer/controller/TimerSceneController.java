@@ -1,6 +1,5 @@
 package com.timer_san.timer.controller;
 
-import com.timer_san.EntryPoint;
 import com.timer_san.constants.Constants;
 import io.reactivex.Observable;
 import io.reactivex.annotations.NonNull;
@@ -9,6 +8,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import lc.kra.system.keyboard.GlobalKeyboardHook;
 import lc.kra.system.keyboard.event.GlobalKeyEvent;
 import lc.kra.system.keyboard.event.GlobalKeyListener;
 
@@ -25,11 +25,10 @@ public class TimerSceneController {
     private Disposable currentOperation;
 
     public TimerSceneController() {
-        EntryPoint.getInstance().getSystemHook().addKeyListener(new GlobalKeyListener() {
+        GlobalKeyboardHook hook = new GlobalKeyboardHook();
+        hook.addKeyListener(new GlobalKeyListener() {
             @Override
-            public void keyPressed(GlobalKeyEvent globalKeyEvent) {
-
-            }
+            public void keyPressed(GlobalKeyEvent globalKeyEvent) {}
 
             @Override
             public void keyReleased(GlobalKeyEvent globalKeyEvent) {
